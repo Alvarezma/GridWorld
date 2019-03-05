@@ -16,7 +16,7 @@
  * @author Barbara Cloud Wells
  */
 
-package part2;
+// package part2;
 
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
