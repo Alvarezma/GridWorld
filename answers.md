@@ -37,3 +37,23 @@ set 2
 5. Yes becasue there are yet to be any functions to change the sideLength which is only set at creation.
 6. Yes if there were a new obstacle put in its way.
 7. After it makes a 90 degree turn.
+
+Exercises 2
+1. The circle bug instead turns 45 degrees after a turn making more of a circle shape.
+5. I would first create another BoxBug object then I would use that add() methos to add it to the world and that would create another BoxBug to the grid.
+
+PART 3
+
+set 3
+1. loc1.getRow();
+2. False
+3. 4, 4
+4. 135
+5. It gets an angle of direction and returns the first grid in thsat direction
+
+set 4
+1. ArrayList<Location> getOccupiedLocations() and the number of spaces is the number of objects. You can use ArrayList<Location> getEmptyAdjacentLocations on a bunch of different places.
+2. isValid(10, 10);
+3. The code is not neccesary to know how to use it. There is no need to know how it exactly works but if ypu want to see that you can go into the code itself.
+4. No an Array List provides much more flexibility in this sort of format and an Array would be hard to use.
+
