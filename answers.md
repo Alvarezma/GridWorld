@@ -57,3 +57,38 @@ set 4
 3. The code is not neccesary to know how to use it. There is no need to know how it exactly works but if ypu want to see that you can go into the code itself.
 4. No an Array List provides much more flexibility in this sort of format and an Array would be hard to use.
 
+set 5
+1. Color, Direction, and location.
+2. Direction is 0, Color is red.
+3. Actor was created in a class to parent other classes that would be the actors on gridworld.
+4. No once the actor is put in the grid it can't be put in again and once its gone the user cant interact with it. Also if it gets removed its impossible to add itself again.
+5. It sets a new direction  using its current direction as a frame for reference.
+
+set 6
+1. The isValid check on the space it tries to move into prevents it from leaving the grid.
+2. The fact that it will only return true if it is void or an instance of flower so if it is a rock it fails both of that and retruns false causing it to turn away.
+3. getGrid() is used from the grid interface and ensures that the Bug is on the grid.
+4. getAdjecentLocation(), getLocation(), isValid() are all location methods and they are used to interact with the surronding of the bug.
+5. gr.get(location) is a method inherited from actor needed to teell what actor it is.
+6. It will just removeSelfFromGrid() instead of moving into the space.
+7. No its still needed to place down the flower.
+8. When creating the flower it uses the only color it can access which is the current color of the bug to create it.
+9. Yes it's still able to place down the flower even when it's been removed.
+10. flower.putSelfInGrid(gr, loc); is the function that places the flower in the grid on the previous location.
+11. 4
+
+Group activity
+1. 
+a. It will jump onto the flower or rock destroying it will its massive weight.
+b. It will not jump and instead turn 90 degrees.
+c. Same as b.
+d. It will turn away and not jump.
+e. they will both turn 180 degress.
+f. besides checking two spaces ahead and checking what actor is there nor no there is no other tests.
+2. 
+a. extends bug
+b. all the bug classea are pretty similar all I have to do is change the canMove and move methods.
+c. No there is no need for a constructor just a call to super.
+d. act(), move(), and canMove() need to be overidded.
+e. no methods need to be added.
+f. putting it in the grid like any other class.
