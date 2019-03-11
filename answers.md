@@ -92,3 +92,13 @@ c. No there is no need for a constructor just a call to super.
 d. act(), move(), and canMove() need to be overidded.
 e. no methods need to be added.
 f. putting it in the grid like any other class.
+
+PART 4
+
+set 7
+1. act(), getActors(), processActors(), getMoveLocations(), selectMoveLocation(), makeMove().
+2. getActors(), processActors(), getMoveLocations(), selectMoveLocation(), makeMove().
+3. Yes because they may want to only pay attention to actors in front of them and may not want tot pay attention to all of them.
+4. Eat them, change color, make them act.
+5. getMoveLocations() obtains all the empty adjacent locations. selectMoveLocation() randomly selects a location from the list that getMoveLocations made. makeMove() moves itself to the selected location.
+6. Doesn't need to make any new variables.

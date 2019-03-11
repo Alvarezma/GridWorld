@@ -20,6 +20,7 @@
 
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
+import info.gridworld.actor.*;
 
 import java.awt.Color;
 
@@ -27,15 +28,17 @@ import java.awt.Color;
  * This class runs a world that contains box bugs. <br />
  * This class is not tested on the AP CS A and AB exams.
  */
-public class BoxBugRunner {
+public class JumperBugRunner {
 	
 	public static void main(String[] args) {
 		ActorWorld world = new ActorWorld();
-		BoxBug alice = new BoxBug(6);
+		JumperBug alice = new JumperBug();
 		alice.setColor(Color.ORANGE);
-		BoxBug bob = new BoxBug(3);
+		JumperBug bob = new JumperBug();
+		Rock r = new Rock();
 		world.add(new Location(7, 8), alice);
 		world.add(new Location(5, 5), bob);
+		world.add(new Location(3, 8), r);
 		world.show();
 	}
 }
