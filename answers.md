@@ -102,3 +102,20 @@ set 7
 4. Eat them, change color, make them act.
 5. getMoveLocations() obtains all the empty adjacent locations. selectMoveLocation() randomly selects a location from the list that getMoveLocations made. makeMove() moves itself to the selected location.
 6. Doesn't need to make any new variables.
+
+set8
+1. As a result of the act() method using 5 other methods all thats needed to change its act is to individually change some of the methods. So the act method still calls processActors() and makeMove() but they are now different than they were before.
+2. Because the only change to moving it wants to make is to also change the direction but once thats done it does the same makeMove() as before so there is no reason not to call the super.
+3. I would have it save it's location call the super then make and place a flower where it was before using the saved location much like a bug does it.
+4. There's no reason to change getActors as the only change in behavior is how the CHameleon proccesses them.
+5. The actor class.
+6. It can call the function in the Actor class of getGrid().
+
+set9
+1. Because the getActors() method is overode and it only passes the actors that it wants to eat into the processActors() method so there is no need to change it for the behavior to match up with what we want.
+2. The crab will use its getActors() method to get all the actiors in the spaces directly in front and front-left and front-right it will then eat all the actors that aren't Rocks or Critters. It will then move and do the same process over again.
+3. It's used so that the modified methods of getActors() and getMoveLocations() do not have to be heavily modified to keep track of direction and where the crab is searching and can instead give the getLocationsInDirections() and not have to worry about the process.
+4. Could return (3, 5), (4, 5), and (2, 5).
+5. A Critter grabs all the open locations around it as potential moves. A crab will only grab open positions to the right or left of it. The move function will choose a random location among the open positions The difference between them is that if the critter has no open locations it doesn't move but the crab will turn left or right.
+6. Whether or not there are any open areas to the left or right of it.
+7. There is a specific line of code in the processActors() method that will eat anything as long as its not a rock or another critter so they never eat each other.

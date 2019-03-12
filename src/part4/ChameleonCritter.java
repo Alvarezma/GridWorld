@@ -17,7 +17,8 @@
  * @author Cay Horstmann
  */
 
-package part4;
+// package part4;
+import java.awt.Color;
 
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
  * The implementation of this class is testable on the AP CS A and AB exams.
  */
 public class ChameleonCritter extends Critter {
+
+	private static final double DARKENING_FACTOR = 0.05;
 	
 	/**
 	 * Randomly selects a neighbor and changes this critter's color to be the
@@ -39,11 +42,20 @@ public class ChameleonCritter extends Critter {
 	public void processActors(ArrayList<Actor> actors) {
 		int n = actors.size();
 		if (n == 0)
-			return;
+			darken();
 		int r = (int) (Math.random() * n);
 
 		Actor other = actors.get(r);
 		setColor(other.getColor());
+	}
+
+	private void darken()	{
+		Color c = getColor();
+		int red = (int)(c.getRed() * (1 - DARKENING_FACTOR));
+		int green = (int)(c.getGreen() * (1 - DARKENING_FACTOR));
+		int blue = (int)(c.getBlue() * (1 - DARKENING_FACTOR));
+
+		setColor(new Color(red, green, blue));
 	}
 
 	/**

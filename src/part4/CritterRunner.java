@@ -17,7 +17,7 @@
  * @author Cay Horstmann
  */
 
-package part4;
+// package part4;
 
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Critter;
