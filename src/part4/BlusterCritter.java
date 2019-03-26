@@ -2,12 +2,12 @@ import java.awt.Color;
 
 import info.gridworld.actor.*;
 import info.gridworld.grid.Location;
+import info.gridworld.grid.Grid;
 
 import java.util.ArrayList;
 
 public class BlusterCritter extends Critter {
 
-	private static final double COLOR_CHANGE_FACTOR = 0.05;
     private int c;
 
     public BlusterCritter(int c) {
@@ -27,7 +27,7 @@ public class BlusterCritter extends Critter {
 	}
 
 	public void processActors(ArrayList<Actor> actors) {
-        if (actors.size() < c)	{
+  	if (actors.size() < c)	{
 			brighten();
 		} else	{
 			darken();
@@ -36,9 +36,9 @@ public class BlusterCritter extends Critter {
 
 	private void brighten()	{
 		Color c = getColor();
-		int red = (int)(c.getRed() * (1 + COLOR_CHANGE_FACTOR));
-		int green = (int)(c.getGreen() * (1 + COLOR_CHANGE_FACTOR));
-		int blue = (int)(c.getBlue() * (1 + COLOR_CHANGE_FACTOR));
+		int red = c.getRed() + 5;
+		int green = c.getGreen() + 5;
+		int blue = c.getBlue() + 5;		
 		if (red > 255)	{
 			red = 255;
 		}
@@ -54,9 +54,18 @@ public class BlusterCritter extends Critter {
 
 	private void darken()	{
 		Color c = getColor();
-		int red = (int)(c.getRed() * (1 - COLOR_CHANGE_FACTOR));
-		int green = (int)(c.getGreen() * (1 - COLOR_CHANGE_FACTOR));
-		int blue = (int)(c.getBlue() * (1 - COLOR_CHANGE_FACTOR));
+		int red = c.getRed() - 5;
+		int green = c.getGreen() - 5;
+		int blue = c.getBlue() - 5;
+		if (red < 0)	{
+			red = 0;
+		}
+		if (green < 0)	{
+			green = 0;
+		}
+		if (blue < 0)	{
+			blue = 0;
+		}
 
 		setColor(new Color(red, green, blue));
 	}
@@ -65,10 +74,10 @@ public class BlusterCritter extends Critter {
 		ArrayList<Location> locs = new ArrayList<Location>();
 		Grid gr = getGrid();
 		Location loc = getLocation();
-		Location tempLoc;
-		locs.add(gr.getValidAdjacentLocations(loc));
 
 		for (int d = 0; d < 360; d += 45)	{
+			if (gr.isValid(loc.getAdjacentLocation(d)))
+				locs.add(loc.getAdjacentLocation(d));
 			if (gr.isValid(loc.getAdjacentLocation(d).getAdjacentLocation(d)))
 				locs.add(loc.getAdjacentLocation(d).getAdjacentLocation(d));
 			if (d % 90 == 0)	{
