@@ -119,3 +119,32 @@ set9
 5. A Critter grabs all the open locations around it as potential moves. A crab will only grab open positions to the right or left of it. The move function will choose a random location among the open positions The difference between them is that if the critter has no open locations it doesn't move but the crab will turn left or right.
 6. Whether or not there are any open areas to the left or right of it.
 7. There is a specific line of code in the processActors() method that will eat anything as long as its not a rock or another critter so they never eat each other.
+
+Group Critter Activity
+
+1. CritterCrafter - the Critter gets the actors directly in front of them. They will process them by switching out the current actor with another Critter Crafter. The actor will move like a normal critter.
+
+Tester
+public class CritterCrafterRunner {
+	
+	public static void main(String[] args) {
+		ActorWorld world = new ActorWorld();
+		world.add(new Location(7, 5), new Rock());
+		world.add(new Location(5, 4), new Rock());
+		world.add(new Location(5, 7), new Rock());
+		world.add(new Location(7, 3), new Rock());
+		world.add(new Location(7, 8), new Flower());
+		world.add(new Location(2, 2), new Flower());
+		world.add(new Location(3, 5), new Flower());
+		world.add(new Location(3, 8), new Flower());
+		world.add(new Location(6, 5), new Bug());
+		world.add(new Location(5, 3), new Bug());
+		world.add(new Location(4, 5), new CritterCrafter());
+		world.add(new Location(6, 1), new CritterCrafter());
+		world.add(new Location(7, 4), new CritterCrafter());
+		world.show();
+	}
+}
+
+2. Switched ideas with Matthew
+3. Making the RockLobster
