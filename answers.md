@@ -148,3 +148,4 @@ public class CritterCrafterRunner {
 
 2. Switched ideas with Matthew
 3. Making the RockLobster
+4. Completed RockLobster that works as a normal crab exept it turns and rocks it finds int more rockLobsters.
